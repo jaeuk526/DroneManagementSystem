@@ -5,6 +5,7 @@ public class MenuManager{ //메뉴 관리 클래스
 
 	public static void main(String[] args) { //메인함수
 		
+		Scanner input = new Scanner(System.in);
 		int num = 5; 
 		//초기 설정
 		
