@@ -15,11 +15,11 @@ public class MenuManager{ //메뉴 관리 클래스
 			System.out.println("3. Edit Aircraft");
 			System.out.println("4. View Aircraft");
 			System.out.println("5. Exit");
-			System.out.println("Select one number between 1 - 6: ");
+			System.out.println("Select one number between 1 - 5: ");
 			num = input.nextInt(); //입력값을 num 변수로 설정
 	
-			if (num == 1) { //num이 1로 입력될경우 아래 메소드를 실행
-				droneManager.addAircraft();
+			if (num == 1) {
+				droneManager.addAircraft(); //num이 1일 경우 droneManager클래스의 항공기 추가 메소드 실행
 			}
 			else if (num == 2) {
 				droneManager.deleteAircraft();
