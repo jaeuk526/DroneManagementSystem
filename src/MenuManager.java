@@ -1,25 +1,25 @@
-import java.util.Scanner; //Å¬·¡½º ÇÔ¼ö È£Ãâ
+import java.util.Scanner; //í´ë˜ìŠ¤ í•¨ìˆ˜ í˜¸ì¶œ
 
-public class MenuManager{ //¸Ş´º °ü¸® Å¬·¡½º
+public class MenuManager{ //ë©”ë‰´ ê´€ë¦¬ í´ë˜ìŠ¤
 	
 
-	public static void main(String[] args) { //¸ŞÀÎÇÔ¼ö
+	public static void main(String[] args) { //ë©”ì¸í•¨ìˆ˜
 		Scanner input = new Scanner(System.in);
 		DroneManager droneManager = new DroneManager(input);
 		int num = -1; 
-		//ÃÊ±â ¼³Á¤
+		//ì´ˆê¸° ì„¤ì •
 		
-		while (num != 5) { //num ÀÔ·ÂÀÌ 6ÀÌ µÇÁö ¾Ê´ÂÇÑ ÀÌ ¹İº¹¹®À» °è¼Ó ½ÇÇàÇÒ°Í
+		while (num != 5) { //num ì…ë ¥ì´ 5ê°€ ë˜ì§€ ì•ŠëŠ”í•œ ì´ ë°˜ë³µë¬¸ì„ ê³„ì† ì‹¤í–‰í• ê²ƒ
 			System.out.println("1. Add Aircraft");
 			System.out.println("2. Delete Aircraft");
 			System.out.println("3. Edit Aircraft");
 			System.out.println("4. View Aircraft");
 			System.out.println("5. Exit");
 			System.out.println("Select one number between 1 - 5: ");
-			num = input.nextInt(); //ÀÔ·Â°ªÀ» num º¯¼ö·Î ¼³Á¤
+			num = input.nextInt(); //ì…ë ¥ê°’ì„ num ë³€ìˆ˜ë¡œ ì„¤ì •
 	
 			if (num == 1) {
-				droneManager.addAircraft(); //numÀÌ 1ÀÏ °æ¿ì droneManagerÅ¬·¡½ºÀÇ Ç×°ø±â Ãß°¡ ¸Ş¼Òµå ½ÇÇà
+				droneManager.addAircraft(); //numì´ 1ì¼ ê²½ìš° droneManagerí´ë˜ìŠ¤ì˜ í•­ê³µê¸° ì¶”ê°€ ë©”ì†Œë“œ ì‹¤í–‰
 			}
 			else if (num == 2) {
 				droneManager.deleteAircraft();
