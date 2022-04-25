@@ -1,25 +1,23 @@
-import java.util.Scanner; //클래스 함수 호출
+import java.util.Scanner;
 
-public class MenuManager{ //메뉴 관리 클래스
-	
+public class MenuManager{
 
 	public static void main(String[] args) { //메인함수
 		Scanner input = new Scanner(System.in);
 		DroneManager droneManager = new DroneManager(input);
-		int num = -1; 
-		//초기 설정
-		
-		while (num != 5) { //num 입력이 5가 되지 않는한 이 반복문을 계속 실행할것
+		int num = -1;
+
+		while (num != 5) {
 			System.out.println("1. Add Aircraft");
 			System.out.println("2. Delete Aircraft");
 			System.out.println("3. Edit Aircraft");
-			System.out.println("4. View Aircraft");
+			System.out.println("4. View Aircrafts");
 			System.out.println("5. Exit");
 			System.out.println("Select one number between 1 - 5: ");
-			num = input.nextInt(); //입력값을 num 변수로 설정
+			num = input.nextInt();
 	
 			if (num == 1) {
-				droneManager.addAircraft(); //num이 1일 경우 droneManager클래스의 항공기 추가 메소드 실행
+				droneManager.addAircraft();
 			}
 			else if (num == 2) {
 				droneManager.deleteAircraft();
@@ -28,7 +26,7 @@ public class MenuManager{ //메뉴 관리 클래스
 				droneManager.editAircraft();
 			}
 			else if (num == 4){
-				droneManager.viewAircraft();
+				droneManager.viewAircrafts();
 			}
 		}
 		
