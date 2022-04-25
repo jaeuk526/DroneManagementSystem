@@ -1,20 +1,67 @@
+package drone;
+import java.util.Scanner;
 
 public class Drone {
-	String name;
-	int serialNum;
-	String manu; //ÇÊµå ¼±¾ğ
-
-	public Drone(){ //±âº» »ı¼ºÀÚ
-		
+	protected DroneType type = DroneType.Multicoptor; //ìº¡ìŠí™”
+	protected String name;
+	protected int serialNum;
+	protected String manu;
+	
+	public DroneType getType() {
+		return type;
 	}
 	
-	public Drone(String name, int serialNum, String manu){
-		this.name = name; //Å¬·¡½ºÀÇ º¯¼ö¸¦ ÀÔ·Â¹ŞÀº º¯¼ö·Î ¼±¾ğ
+	public void setType(DroneType type) {
+		this.type = type;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public int getSerialNum() {
+		return serialNum;
+	}
+	
+	public void setSerialNum(int serialNum) {
+		this.serialNum = serialNum;
+	}
+	
+	public String getManu() {
+		return manu;
+	}
+	
+	public void setManu(String manu) {
+		this.manu = manu;
+	}
+
+	
+	public Drone(){}
+	public Drone(String name, int serialNum, String manu){ //ìƒì„±ì
+		this.name = name;
 		this.serialNum = serialNum;
 		this.manu = manu;
 	}
 	
-	public void printInfo(){ //Á¤º¸ Ãâ·Â ¸Ş¼Òµå
+	public void printInfo(){ //ì •ë³´ ì¶œë ¥
 		System.out.println("name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu);
+	}
+	
+	public void getUserInput(Scanner input) {
+		System.out.print("Aircraft Serial No. ");
+		int serialNum = input.nextInt();
+		this.setSerialNum(serialNum);
+		
+		System.out.print("Aircraft Name : ");
+		String name = input.next();
+		this.setName(name);
+		
+		System.out.print("Aircraft Manufacturer : ");
+		String manu = input.next();
+		this.setManu(manu);
 	}
 }
