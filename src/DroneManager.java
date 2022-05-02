@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import drone.Drone;
-import drone.HelicopterDrone;
-
 public class DroneManager {
 	ArrayList<Drone> drones = new ArrayList<Drone>();
 	Scanner input;
@@ -15,28 +12,28 @@ public class DroneManager {
 	}
 	
 	public void addAircraft() { //항공기 추가 메소드
-		int kind = 0;
+		int type = 0;
 		Drone drone;
 		
-		while (kind != 1 && kind != 2) {
+		while (type != 1 && type != 2) {
 			System.out.print("1 for Multicopter ");
-			System.out.print("2 for Helicopter ");
-			System.out.print("Select num for Drone Type between 1 and 2: ");
-			kind = input.nextInt();
-			if (kind == 1) {
+			System.out.println("2 for Helicopter ");
+			System.out.print("Select number for Drone Type between 1 and 2: ");
+			type = input.nextInt();
+			if (type == 1) { //멀티콥터의 경우
 				drone = new Drone();
 				drone.getUserInput(input);
 				drones.add(drone);
 				break;
 			}
-			else if (kind == 2) {
+			else if (type == 2) { //헬리콥터의 경우 
 				drone = new HelicopterDrone();
 				drone.getUserInput(input);
 				drones.add(drone);
-				break; 
+				break;
 			}
 			else {
-				System.out.print("Select num for Drone Type");
+				System.out.print("Select number for Drone Type");
 			}
 		}
 	}
