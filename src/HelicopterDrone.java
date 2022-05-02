@@ -1,5 +1,3 @@
-package drone;
-
 import java.util.Scanner;
 
 public class HelicopterDrone extends Drone {
