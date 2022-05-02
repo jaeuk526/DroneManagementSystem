@@ -13,7 +13,7 @@ public class MenuManager{
 			System.out.println("3. Edit Aircraft");
 			System.out.println("4. View Aircrafts");
 			System.out.println("5. Exit");
-			System.out.println("Select one number between 1 - 5: ");
+			System.out.print("Select one number between 1 - 5: ");
 			num = input.nextInt();
 	
 			if (num == 1) {
