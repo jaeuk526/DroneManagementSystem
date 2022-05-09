@@ -2,12 +2,17 @@ import java.util.Scanner;
 
 public class HelicopterDrone extends Drone implements DroneInput {
 	
+	HelicopterDrone(){
+		setType(DroneType.Helicopter);
+	}
+	
 	public void getUserInput(Scanner input) {
 
 		char answer = 'x';
 
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
+			
 			System.out.print("does this drone has a serial number? (Y/N)");
 			answer = input.next().charAt(0);
 			if (answer == 'y' || answer == 'Y') {
@@ -30,5 +35,7 @@ public class HelicopterDrone extends Drone implements DroneInput {
 		String manu = input.next();
 		this.setManu(manu);
 	}
+	
+	
 	
 }
