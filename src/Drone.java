@@ -1,7 +1,7 @@
 import java.util.Scanner;
 /*Drone이라는 객체를 생성하지 않겠다*/
 public abstract class Drone implements DroneInput{
-	protected DroneType type = DroneType.Multicoptor; //캡슐화
+	protected DroneType type; //캡슐화
 	protected String name;
 	protected int serialNum;
 	protected String manu;
