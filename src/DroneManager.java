@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DroneManager {
-	ArrayList<Drone> drones = new ArrayList<Drone>();
+	ArrayList<DroneInput> drones = new ArrayList<DroneInput>();
 	Scanner input;
 	
 	
@@ -13,7 +13,7 @@ public class DroneManager {
 	
 	public void addAircraft() { //항공기 추가 메소드
 		int type = 0;
-		Drone drone;
+		Drone droneInput;
 		
 		while (type != 1 && type != 2) {
 			System.out.print("1 for Multicopter ");
@@ -21,15 +21,15 @@ public class DroneManager {
 			System.out.print("Select number for Drone Type between 1 and 2: ");
 			type = input.nextInt();
 			if (type == 1) { //멀티콥터의 경우
-				drone = new Drone();
-				drone.getUserInput(input);
-				drones.add(drone);
+				droneInput = new Drone();
+				droneInput.getUserInput(input);
+				drones.add(droneInput);
 				break;
 			}
 			else if (type == 2) { //헬리콥터의 경우 
-				drone = new HelicopterDrone();
-				drone.getUserInput(input);
-				drones.add(drone);
+				droneInput = new HelicopterDrone();
+				droneInput.getUserInput(input);
+				drones.add(droneInput);
 				break;
 			}
 			else {
@@ -64,8 +64,8 @@ public class DroneManager {
 		
 		int AircraftSerialNum = input.nextInt();
 		for(int i = 0; i < drones.size(); i++) {
-			Drone drone = drones.get(i);
-			if (drone.getSerialNum() == AircraftSerialNum) {
+			DroneInput droneInput = drones.get(i);
+			if (droneInput.getSerialNum() == AircraftSerialNum) {
 				int num = -1;
 				while(num != 5) {
 					System.out.println("** Drone Info Edit Menu **");
@@ -77,15 +77,15 @@ public class DroneManager {
 					num = input.nextInt();
 					if(num == 1) {
 						System.out.println("Drone Serial Number: ");
-						drone.setSerialNum(input.nextInt());
+						droneInput.setSerialNum(input.nextInt());
 					}
 					else if(num == 2) {
 						System.out.println("Drone Name: ");
-						drone.setName(input.next());
+						droneInput.setName(input.next());
 					}
 					else if(num == 3) {
 						System.out.println("Drone Manufacturer: ");
-						drone.setManu(input.next());
+						droneInput.setManu(input.next());
 					}
 					else if(num == 4) {
 						break;
