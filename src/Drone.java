@@ -1,6 +1,6 @@
 import java.util.Scanner;
-
-public class Drone {
+/*Drone이라는 객체를 생성하지 않겠다*/
+public abstract class Drone implements DroneInput{
 	protected DroneType type = DroneType.Multicoptor; //캡슐화
 	protected String name;
 	protected int serialNum;
@@ -47,10 +47,6 @@ public class Drone {
 		this.manu = manu;
 	}
 	
-	public void printInfo(){ //정보 출력
-		System.out.println("name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu);
-	}
-	
 	public void getUserInput(Scanner input) { //필드변수를 입력받고 선언해주는 method
 		System.out.print("Aircraft Serial No. ");
 		int serialNum = input.nextInt();
@@ -66,4 +62,9 @@ public class Drone {
 		
 		System.out.println("");
 	}
+	
+	public void printInfo(){ //정보 출력
+		System.out.println("name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu);
+	}
+	
 }
