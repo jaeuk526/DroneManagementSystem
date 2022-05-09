@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class HelicopterDrone extends Drone {
+public class HelicopterDrone extends Drone implements DroneInput {
 	
 	public void getUserInput(Scanner input) {
 
 		char answer = 'x';
-		
 
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
