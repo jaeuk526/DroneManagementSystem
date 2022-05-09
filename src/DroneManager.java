@@ -21,7 +21,7 @@ public class DroneManager {
 			System.out.print("Select number for Drone Type between 1 and 2: ");
 			type = input.nextInt();
 			if (type == 1) { //멀티콥터의 경우
-				droneInput = new Drone();
+				droneInput = new MulticopterDrone();
 				droneInput.getUserInput(input);
 				drones.add(droneInput);
 				break;
