@@ -1,4 +1,3 @@
-package drone;
 
 public enum DroneType {
 	Multicoptor,
