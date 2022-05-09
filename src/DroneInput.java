@@ -8,4 +8,8 @@ public interface DroneInput {
 	public void setName(String name);
 	
 	public void setManu(String manu);
+	
+	public int getSerialNum();
+	
+	public void printInfo();
 }
