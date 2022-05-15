@@ -8,28 +8,35 @@ public class MenuManager{
 		int num = -1;
 
 		while (num != 5) {
-			System.out.println("1. Add Aircraft");
-			System.out.println("2. Delete Aircraft");
-			System.out.println("3. Edit Aircraft");
-			System.out.println("4. View Aircrafts");
-			System.out.println("5. Exit");
-			System.out.print("Select one number between 1 - 5: ");
+			showMenu(); //메뉴함수를 따로 생성
 			num = input.nextInt();
-	
-			if (num == 1) {
+
+			switch(num) { //if else 문 대신 switch문을 사용
+			case 1:
 				droneManager.addAircraft();
-			}
-			else if (num == 2) {
+				break;
+			case 2:
 				droneManager.deleteAircraft();
-			}
-			else if (num == 3){
+				break;
+			case 3:
 				droneManager.editAircraft();
-			}
-			else if (num == 4){
+				break;
+			case 4:
 				droneManager.viewAircrafts();
+				break;
+			default:
+				continue;
 			}
 		}
 		
 	}
 	
+	public static void showMenu() {
+		System.out.println("1. Add Aircraft");
+		System.out.println("2. Delete Aircraft");
+		System.out.println("3. Edit Aircraft");
+		System.out.println("4. View Aircrafts");
+		System.out.println("5. Exit");
+		System.out.print("Select one number between 1 - 5: ");
+	}
 }
