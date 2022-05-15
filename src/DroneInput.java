@@ -12,4 +12,10 @@ public interface DroneInput {
 	public int getSerialNum();
 	
 	public void printInfo();
+	
+	public void setDroneSN(Scanner input);
+	
+	public void setDroneName(Scanner input);
+	
+	public void setDroneManu(Scanner input);
 }
