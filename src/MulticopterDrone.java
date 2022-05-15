@@ -1,6 +1,12 @@
 
-public class MulticopterDrone extends Drone implements DroneInput {
+public class MulticopterDrone extends Drone {
 	MulticopterDrone(){
 		setType(DroneType.Multicoptor);
+	}
+
+	@Override
+	public void printInfo() {
+		// TODO Auto-generated method stub
+		
 	}
 }
