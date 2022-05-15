@@ -1,5 +1,5 @@
 import java.util.Scanner;
-/*Drone이라는 객체를 생성하지 않겠다*/
+
 public abstract class Drone implements DroneInput{
 	protected DroneType type; //캡슐화
 	protected String name;
@@ -47,24 +47,28 @@ public abstract class Drone implements DroneInput{
 		this.manu = manu;
 	}
 	
-	public void getUserInput(Scanner input) { //필드변수를 입력받고 선언해주는 method
-		System.out.print("Aircraft Serial No. ");
-		int serialNum = input.nextInt();
-		this.setSerialNum(serialNum);
-		
-		System.out.print("Aircraft Name : ");
-		String name = input.next();
-		this.setName(name);
-		
-		System.out.print("Aircraft Manufacturer : ");
-		String manu = input.next();
-		this.setManu(manu);
-		
+	public void getUserInput(Scanner input) {
+		setDroneSN(input);
+		setDroneName(input);
+		setDroneManu(input);
 		System.out.println("");
 	}
 	
-	public void printInfo(){ //정보 출력
-		System.out.println("name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu);
+	public void setDroneSN(Scanner input) {
+		System.out.print("Aircraft Serial No. ");
+		int serialNum = input.nextInt();
+		this.setSerialNum(serialNum);
 	}
 	
+	public void setDroneName(Scanner input) {
+		System.out.println("Drone Name: ");
+		int name = input.nextInt();
+		this.setSerialNum(name);
+	}
+	
+	public void setDroneManu(Scanner input) {
+		System.out.println("Drone Manufacturer: ");
+		int manufacturer = input.nextInt();
+		this.setSerialNum(manufacturer);
+	}
 }
