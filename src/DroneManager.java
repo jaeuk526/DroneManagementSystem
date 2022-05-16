@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class DroneManager {
@@ -16,24 +17,33 @@ public class DroneManager {
 		Drone droneInput;
 		
 		while (type != 1 && type != 2) {
-			System.out.print("1 for Multicopter ");
-			System.out.println("2 for Helicopter ");
-			System.out.print("Select number for Drone Type between 1 and 2: ");
-			type = input.nextInt();
-			if (type == 1) { //멀티콥터의 경우
-				droneInput = new MulticopterDrone();
-				droneInput.getUserInput(input);
-				drones.add(droneInput);
-				break;
+			try {
+				System.out.print("1 for Multicopter ");
+				System.out.println("2 for Helicopter ");
+				System.out.print("Select number for Drone Type between 1 and 2: ");
+				type = input.nextInt();
+				if (type == 1) { //멀티콥터의 경우
+					droneInput = new MulticopterDrone();
+					droneInput.getUserInput(input);
+					drones.add(droneInput);
+					break;
+				}
+				else if (type == 2) { //헬리콥터의 경우 
+					droneInput = new HelicopterDrone();
+					droneInput.getUserInput(input);
+					drones.add(droneInput);
+					break;
+				}
+				else {
+					System.out.print("Select number for Drone Type");
+				}
 			}
-			else if (type == 2) { //헬리콥터의 경우 
-				droneInput = new HelicopterDrone();
-				droneInput.getUserInput(input);
-				drones.add(droneInput);
-				break;
-			}
-			else {
-				System.out.print("Select number for Drone Type");
+			catch(InputMismatchException e) {
+				System.out.println("please put an integer between 1 and 3");
+				if (input.hasNext()) {
+					input.next();
+				}
+				type = 0;
 			}
 		}
 	}
@@ -91,6 +101,7 @@ public class DroneManager {
 						drone.setDroneManu(input);
 						break;
 					case 4:
+						drone.setEmail(input);
 						break;
 					default:
 						continue;
@@ -115,7 +126,8 @@ public class DroneManager {
 		System.out.println(" 1. Edit Serial Number");
 		System.out.println(" 2. Edit Name");
 		System.out.println(" 3. Edit Manufacturer");
-		System.out.println(" 4. Exit");
-		System.out.println("Select one number between 1 - 4");
+		System.out.println(" 4. Edit Email");
+		System.out.println(" 5. Exit");
+		System.out.println("Select one number between 1 - 5");
 	}
 }
