@@ -15,25 +15,25 @@ public class HelicopterDrone extends Drone {
 		while (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			
-			System.out.print("does this drone has a serial number? (Y/N)");
+			System.out.print("does this drone has a email address? (Y/N)");
 			answer = input.next().charAt(0);
 			if (answer == 'y' || answer == 'Y') {
-				setDroneSN(input);
+				setEmail(input);
 				break;
 			}
 			else if(answer == 'n' || answer == 'N') {
-				this.setSerialNum(0);
 				break;
 			}
 			else {}
 		}		
+		setDroneSN(input);
 		setDroneName(input);
 		setDroneManu(input);
 	}
 	
 	public void printInfo(){ //정보 출력
 		String type = getTypeString();
-		System.out.println("type: " + type + "name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu);
+		System.out.println("type: " + type + " name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu + " email: " + email);
 	}
 	
 	
