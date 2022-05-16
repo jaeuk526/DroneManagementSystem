@@ -18,4 +18,6 @@ public interface DroneInput {
 	public void setDroneName(Scanner input);
 	
 	public void setDroneManu(Scanner input);
+	
+	public void setEmail(Scanner input);
 }
