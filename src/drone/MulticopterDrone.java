@@ -1,3 +1,4 @@
+package drone;
 
 public class MulticopterDrone extends Drone {
 	MulticopterDrone(){

@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import drone.Drone;
+import drone.DroneInput;
+import drone.HelicopterDrone;
+import drone.MulticopterDrone;
+
 public class DroneManager {
 	ArrayList<DroneInput> drones = new ArrayList<DroneInput>();
 	Scanner input;

@@ -1,9 +1,11 @@
 
+
+
 import java.util.*;
 
 public class MenuManager{
 
-	public static void main(String[] args) { //ë©”ì¸í•¨ìˆ˜
+	public static void main(String[] args) { //ë©”ì¸?•¨?ˆ˜
 		Scanner input = new Scanner(System.in);
 		DroneManager droneManager = new DroneManager(input);
 		selectMenu(input,droneManager);
@@ -16,10 +18,10 @@ public class MenuManager{
 		while (num != 5) {
 			
 			try {
-				showMenu(); //ë©”ë‰´í•¨ìˆ˜ë¥¼ ë”°ë¡œ ìƒì„±
+				showMenu(); //ë©”ë‰´?•¨?ˆ˜ë¥? ?”°ë¡? ?ƒ?„±
 				num = input.nextInt();
 	
-				switch(num) { //if else ë¬¸ ëŒ€ì‹  switchë¬¸ì„ ì‚¬ìš©
+				switch(num) { //if else ë¬? ???‹  switchë¬¸ì„ ?‚¬?š©
 				case 1:
 					droneManager.addAircraft();
 					break;

@@ -1,3 +1,4 @@
+package drone;
 import java.util.Scanner;
 
 public interface DroneInput {
