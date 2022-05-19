@@ -1,11 +1,12 @@
 
 
-
+import log.EventLogger;
 import java.util.*;
 
 public class MenuManager{
-
-	public static void main(String[] args) { //ë©”ì¸?•¨?ˆ˜
+	static EventLogger logger = new EventLogger("log.txt");
+	
+	public static void main(String[] args) { //ë©”ì¸?ï¿½ï¿½?ï¿½ï¿½
 		Scanner input = new Scanner(System.in);
 		DroneManager droneManager = new DroneManager(input);
 		selectMenu(input,droneManager);
@@ -18,21 +19,25 @@ public class MenuManager{
 		while (num != 5) {
 			
 			try {
-				showMenu(); //ë©”ë‰´?•¨?ˆ˜ë¥? ?”°ë¡? ?ƒ?„±
+				showMenu(); //ë©”ë‰´?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½
 				num = input.nextInt();
 	
-				switch(num) { //if else ë¬? ???‹  switchë¬¸ì„ ?‚¬?š©
+				switch(num) { //if else ï¿½? ???ï¿½ï¿½ switchë¬¸ì„ ?ï¿½ï¿½?ï¿½ï¿½
 				case 1:
 					droneManager.addAircraft();
+					logger.log("add a drone");
 					break;
 				case 2:
 					droneManager.deleteAircraft();
+					logger.log("delete a drone");
 					break;
 				case 3:
 					droneManager.editAircraft();
+					logger.log("edit a drone");
 					break;
 				case 4:
 					droneManager.viewAircrafts();
+					logger.log("view a list of drone");
 					break;
 				default:
 					continue;

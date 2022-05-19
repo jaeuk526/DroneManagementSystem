@@ -1,7 +1,7 @@
 package drone;
 
 public class MulticopterDrone extends Drone {
-	MulticopterDrone(){
+	public MulticopterDrone(){
 		setType(DroneType.Multicoptor);
 	}
 

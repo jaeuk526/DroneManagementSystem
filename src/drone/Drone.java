@@ -1,9 +1,7 @@
 package drone;
 import java.util.Scanner;
 
-import exception.h(EmailFormatExcepti;
-import exception.s EmailFormatExcepti;
-import exception.w EmailFormatExcepti;
+import exception.EmailFormatException;
 
 public abstract class Drone implements DroneInput{
 	protected DroneType type; //캡슐화

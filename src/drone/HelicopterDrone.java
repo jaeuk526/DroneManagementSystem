@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class HelicopterDrone extends Drone {
 	
-	HelicopterDrone(){
+	public HelicopterDrone(){
 		setType(DroneType.Helicopter);
 	}
 	
