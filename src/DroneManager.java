@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -7,9 +8,13 @@ import drone.DroneInput;
 import drone.HelicopterDrone;
 import drone.MulticopterDrone;
 
-public class DroneManager {
+public class DroneManager implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ArrayList<DroneInput> drones = new ArrayList<DroneInput>();
-	Scanner input;
+	transient Scanner input;
 	
 	
 	DroneManager(){}

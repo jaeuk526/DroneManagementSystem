@@ -1,9 +1,14 @@
 package drone;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.EmailFormatException;
 
-public abstract class Drone implements DroneInput{
+public abstract class Drone implements DroneInput, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 663054264422122893L;
 	protected DroneType type; //캡슐화
 	protected String name;
 	protected int serialNum;
