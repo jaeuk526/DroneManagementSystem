@@ -12,7 +12,8 @@ public class MenuSelection extends JFrame{
 		this.setSize(300, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //창닫기 버튼을 눌렀을때 프로그램 종료
 		
-		JPanel panel = new JPanel();						//기본이 flow layout
+		JPanel panel1 = new JPanel();
+		JPanel panel2 = new JPanel();						//기본이 flow layout
 		JLabel label = new JLabel("Menu Selection");
 		
 		JButton button1 = new JButton("Add Student");
@@ -21,16 +22,16 @@ public class MenuSelection extends JFrame{
 		JButton button4 = new JButton("Delete Student");
 		JButton button5 = new JButton("Exit Program");
 		
-		panel.add(label);									//만들어진 Jlabel을 panel에다 붙이기
-		panel.add(button1);
-		panel.add(button2);
-		panel.add(button3);
-		panel.add(button4);
-		panel.add(button5);
+		panel1.add(label);									//만들어진 Jlabel을 panel에다 붙이기
+		panel2.add(button1);
+		panel2.add(button2);
+		panel2.add(button3);
+		panel2.add(button4);
+		panel2.add(button5);
 		
 //		this.setContentPane(panel);							// 전체판이 panel로 설정
-		this.add(label, BorderLayout.NORTH);
-		this.add(panel, BorderLayout.CENTER);
+		this.add(panel1, BorderLayout.NORTH);
+		this.add(panel2, BorderLayout.CENTER);
 		
 		this.setVisible(true);
 	}
