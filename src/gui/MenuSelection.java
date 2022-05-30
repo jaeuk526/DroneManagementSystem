@@ -16,10 +16,10 @@ public class MenuSelection extends JFrame{
 		JPanel panel2 = new JPanel();						//기본이 flow layout
 		JLabel label = new JLabel("Menu Selection");
 		
-		JButton button1 = new JButton("Add Student");
-		JButton button2 = new JButton("View Student");
-		JButton button3 = new JButton("Edit Student");
-		JButton button4 = new JButton("Delete Student");
+		JButton button1 = new JButton("Add Drone");
+		JButton button2 = new JButton("View Drone");
+		JButton button3 = new JButton("Edit Drone");
+		JButton button4 = new JButton("Delete Drone");
 		JButton button5 = new JButton("Exit Program");
 		
 		panel1.add(label);									//만들어진 Jlabel을 panel에다 붙이기
@@ -29,7 +29,6 @@ public class MenuSelection extends JFrame{
 		panel2.add(button4);
 		panel2.add(button5);
 		
-//		this.setContentPane(panel);							// 전체판이 panel로 설정
 		this.add(panel1, BorderLayout.NORTH);
 		this.add(panel2, BorderLayout.CENTER);
 		
