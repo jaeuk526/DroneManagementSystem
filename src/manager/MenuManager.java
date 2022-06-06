@@ -1,3 +1,4 @@
+package manager;
 
 
 import log.EventLogger;
@@ -10,10 +11,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 
+import gui.WindowFrame;
+
 public class MenuManager{
 	static EventLogger logger = new EventLogger("log.txt");
 	
-	public static void main(String[] args) { //메인?��?��
+	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
 		DroneManager droneManager = getObject("dronemanager.ser");
@@ -21,6 +24,8 @@ public class MenuManager{
 		if(droneManager == null) {
 			droneManager = new DroneManager(input); 
 		}
+		
+		WindowFrame frame = new WindowFrame(droneManager);
 		
 		selectMenu(input,droneManager);
 		putObject(droneManager,"dronemanager.ser");

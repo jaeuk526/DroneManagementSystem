@@ -6,9 +6,15 @@ public interface DroneInput {
 	
 	public void setSerialNum(int serialNum);
 	
+	public String getName();
+	
 	public void setName(String name);
 	
+	public String getEmail();
+	
 	public void setManu(String manu);
+	
+	public String getManu();
 	
 	public int getSerialNum();
 	

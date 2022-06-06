@@ -1,3 +1,4 @@
+package manager;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -22,7 +23,7 @@ public class DroneManager implements Serializable {
 		this.input = input;
 	}
 	
-	public void addAircraft() { //í•­ê³µê¸° ì¶”ê°€ ë©”ì†Œë“œ
+	public void addAircraft() { //?•­ê³µê¸° ì¶”ê? ë©”ì†Œ?“œ
 		int type = 0;
 		Drone droneInput;
 		
@@ -32,13 +33,13 @@ public class DroneManager implements Serializable {
 				System.out.println("2 for Helicopter ");
 				System.out.print("Select number for Drone Type between 1 and 2: ");
 				type = input.nextInt();
-				if (type == 1) { //ë©€í‹°ì½¥í„°ì˜ ê²½ìš°
+				if (type == 1) { //ë©??‹°ì½¥í„°?˜ ê²½ìš°
 					droneInput = new MulticopterDrone();
 					droneInput.getUserInput(input);
 					drones.add(droneInput);
 					break;
 				}
-				else if (type == 2) { //í—¬ë¦¬ì½¥í„°ì˜ ê²½ìš° 
+				else if (type == 2) { //?—¬ë¦¬ì½¥?„°?˜ ê²½ìš° 
 					droneInput = new HelicopterDrone();
 					droneInput.getUserInput(input);
 					drones.add(droneInput);
@@ -58,7 +59,7 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
-	public void deleteAircraft() { //í•­ê³µê¸° ì‚­ì œ ë©”ì†Œë“œ
+	public void deleteAircraft() { //?•­ê³µê¸° ?‚­? œ ë©”ì†Œ?“œ
 		System.out.print("Enter the Serial Number of the Aircraft to delete : ");
 		int AircraftSerialNum = input.nextInt();
 		int index = findIndex(AircraftSerialNum);
@@ -66,7 +67,7 @@ public class DroneManager implements Serializable {
 	}
 	
 	public int findIndex(int AircraftSerialNum) {
-		int index = -1; // array ì—ì„œ indexë¥¼ ëª»ì°¾ì•˜ë‹¤ëŠ” ì˜ë¯¸
+		int index = -1; // array ?—?„œ indexë¥? ëª»ì°¾?•˜?‹¤?Š” ?˜ë¯?
 		for (int i = 0; i < drones.size(); i++) {
 			if (drones.get(i).getSerialNum() == AircraftSerialNum) {
 				index = i;
@@ -88,7 +89,7 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
-	public void editAircraft() { //í•­ê³µê¸° í¸ì§‘ ë©”ì†Œë“œ
+	public void editAircraft() { //?•­ê³µê¸° ?¸ì§? ë©”ì†Œ?“œ
 		System.out.print("Enter the Serial Number of the Aircraft to edit : ");
 		
 		int AircraftSerialNum = input.nextInt();
@@ -123,15 +124,22 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
-	public void viewAircrafts() { //í•­ê³µê¸° ì¡°íšŒ ë©”ì†Œë“œ
+	public void viewAircrafts() { //?•­ê³µê¸° ì¡°íšŒ ë©”ì†Œ?“œ
 		System.out.println("# of registered drones: " + drones.size());
 		for (int i = 0; i < drones.size(); i++) {
 			drones.get(i).printInfo();
 		}
 	}
 	
+	public int size() {
+		return drones.size();
+	}
 	
-	public void showEditMenu() { //ë©”ë‰´í™”ë©´ í‘œì‹œ ë©”ì†Œë“œ
+	public DroneInput get(int index) {
+		return (Drone) drones.get(index);
+	}
+	
+	public void showEditMenu() { //ë©”ë‰´?™”ë©? ?‘œ?‹œ ë©”ì†Œ?“œ
 		System.out.println("** Drone Info Edit Menu **");
 		System.out.println(" 1. Edit Serial Number");
 		System.out.println(" 2. Edit Name");
