@@ -7,7 +7,7 @@ public class MulticopterDrone extends Drone {
 
 	@Override
 	public void printInfo() {
-		// TODO Auto-generated method stub
-		
+		String type = "Multicopter";
+		System.out.println("type: " + type + " name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu + " email: " + email);
 	}
 }

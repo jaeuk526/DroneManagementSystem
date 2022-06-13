@@ -82,9 +82,8 @@ public class MenuManager{
 	
 	public static DroneManager getObject(String filename) {
 		DroneManager droneManager = null;
-		FileInputStream file;
 		try {
-			file = new FileInputStream(filename);
+			FileInputStream file = new FileInputStream(filename);
 			ObjectInputStream in = new ObjectInputStream(file);
 			droneManager = (DroneManager) in.readObject();
 			

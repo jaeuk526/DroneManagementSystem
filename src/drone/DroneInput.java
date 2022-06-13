@@ -1,6 +1,8 @@
 package drone;
 import java.util.Scanner;
 
+import exception.EmailFormatException;
+
 public interface DroneInput {
 	public void getUserInput(Scanner input);
 	
@@ -27,4 +29,5 @@ public interface DroneInput {
 	public void setDroneManu(Scanner input);
 	
 	public void setEmail(Scanner input);
+	public void setEmail(String string) throws EmailFormatException;
 }

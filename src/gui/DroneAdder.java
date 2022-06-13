@@ -7,13 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import events.DroneAdderCancelListener;
+import events.DroneAdderListener;
+import manager.DroneManager;
+
 public class DroneAdder extends JPanel {
 	
 	WindowFrame frame;
+	DroneManager droneManager;
 	
-	public DroneAdder(WindowFrame frame) {
+	public DroneAdder(WindowFrame frame,DroneManager droneManager) {
 		
 		this.frame = frame;
+		this.droneManager = droneManager;
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
@@ -42,8 +48,14 @@ public class DroneAdder extends JPanel {
 		panel.add(labelManu);
 		panel.add(fieldManu);
 		
-		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		JButton saveButton = new JButton("save");
+		saveButton.addActionListener(new DroneAdderListener(fieldID,fieldName,fieldEmail,fieldManu,droneManager));
+		
+		JButton cancelButton = new JButton("cancel");
+		cancelButton.addActionListener(new DroneAdderCancelListener(frame));
+		
+		panel.add(saveButton);
+		panel.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(panel, 5, 2, 6, 6, 6, 6);
 		

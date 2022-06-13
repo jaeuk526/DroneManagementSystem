@@ -32,7 +32,7 @@ public class HelicopterDrone extends Drone {
 		setDroneManu(input);
 	}
 	
-	public void printInfo(){ //정보 출력
+	public void printInfo(){
 		String type = getTypeString();
 		System.out.println("type: " + type + " name: " + name + " serialNum: " + serialNum + " maufacturer: " + manu + " email: " + email);
 	}
@@ -64,5 +64,4 @@ public class HelicopterDrone extends Drone {
 		}
 		return dtype;
 	}
-	
 }

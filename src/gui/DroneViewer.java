@@ -17,6 +17,36 @@ public class DroneViewer extends JPanel {
 	WindowFrame frame;
 	DroneManager droneManager;
 	
+	public DroneManager getDroneManager() {
+		return droneManager;
+	}
+
+	public void setDroneManager(DroneManager droneManager) {
+		this.droneManager = droneManager;
+		this.removeAll();
+		
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("S/N");
+		model.addColumn("Name");
+		model.addColumn("Email");
+		model.addColumn("Manufacturer");
+		
+		for(int i = 0; i< droneManager.size(); i++) {
+			Vector row = new Vector();
+			DroneInput si = droneManager.get(i);
+			row.add(si.getSerialNum());
+			row.add(si.getName());
+			row.add(si.getEmail());
+			row.add(si.getManu());
+			model.addRow(row);
+		}
+		
+		JTable table = new JTable(model);
+		JScrollPane sp = new JScrollPane(table);
+		
+		this.add(sp);
+	}
+
 	public DroneViewer(WindowFrame frame, DroneManager droneManager) {
 		this.frame = frame;
 		this.droneManager = droneManager;

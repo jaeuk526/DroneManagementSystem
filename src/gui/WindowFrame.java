@@ -16,7 +16,7 @@ public class WindowFrame extends JFrame{
 		
 		this.droneManager = droneManager;
 		menuselection = new MenuSelection(this);
-		droneadder = new DroneAdder(this);
+		droneadder = new DroneAdder(this, this.droneManager);
 		droneviewer = new DroneViewer(this, this.droneManager);
 				
 		this.setSize(500, 300);
