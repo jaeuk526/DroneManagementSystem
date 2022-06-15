@@ -17,25 +17,16 @@ public class DroneManager implements Serializable {
 	ArrayList<DroneInput> drones = new ArrayList<DroneInput>();
 	transient Scanner input;
 	
-	
+	//생성자
 	DroneManager(){}
 	DroneManager(Scanner input){
 		this.input = input;
 	}
 	
-	public void addAircraft(String ID, String Name, String Email, String manu) {
-		DroneInput droneInput = new MulticopterDrone();
-		droneInput.getUserInput(input);
-		drones.add(droneInput);
-	}
-	
-	public void addAircraft(DroneInput droneInput) {
-		drones.add(droneInput);
-	}
-	
+	//addAircraft 항공기 추가 함수(method overloading 포함)
 	public void addAircraft() {
 		int type = 0;
-		Drone droneInput;
+		Drone drone;
 		
 		while (type != 1 && type != 2) {
 			try {
@@ -44,15 +35,15 @@ public class DroneManager implements Serializable {
 				System.out.print("Select number for Drone Type between 1 and 2: ");
 				type = input.nextInt();
 				if (type == 1) {
-					droneInput = new MulticopterDrone();
-					droneInput.getUserInput(input);
-					drones.add(droneInput);
+					drone = new MulticopterDrone();
+					drone.getUserInput(input);
+					drones.add(drone);
 					break;
 				}
 				else if (type == 2) {
-					droneInput = new HelicopterDrone();
-					droneInput.getUserInput(input);
-					drones.add(droneInput);
+					drone = new HelicopterDrone();
+					drone.getUserInput(input);
+					drones.add(drone);
 					break;
 				}
 				else {
@@ -60,7 +51,7 @@ public class DroneManager implements Serializable {
 				}
 			}
 			catch(InputMismatchException e) {
-				System.out.println("please put an integer between 1 and 3");
+				System.out.println("please put an integer between 1 and 2");
 				if (input.hasNext()) {
 					input.next();
 				}
@@ -69,6 +60,17 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
+	public void addAircraft(DroneInput droneInput) {
+		drones.add(droneInput);
+	}
+	
+	public void addAircraft(String ID, String Name, String Email, String manu) {
+		DroneInput droneInput = new MulticopterDrone();
+		droneInput.getUserInput(input);
+		drones.add(droneInput);
+	}
+	
+	//deleteAircraft 항공기 삭제 함수
 	public void deleteAircraft() {
 		System.out.print("Enter the Serial Number of the Aircraft to delete : ");
 		int AircraftSerialNum = input.nextInt();
@@ -76,6 +78,7 @@ public class DroneManager implements Serializable {
 		removeFromDrones(index, AircraftSerialNum);
 	}
 	
+	//제거를 위한 인덱스 탐색 함수
 	public int findIndex(int AircraftSerialNum) {
 		int index = -1;
 		for (int i = 0; i < drones.size(); i++) {
@@ -87,6 +90,7 @@ public class DroneManager implements Serializable {
 		return index;
 	}
 	
+	//항공기 삭제 함수
 	public int removeFromDrones(int index,int AircraftSerialNum) {
 		if (index >= 0) {
 			drones.remove(index);
@@ -99,6 +103,7 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
+	//editAircraft 항공기 편집 함수
 	public void editAircraft() {
 		System.out.print("Enter the Serial Number of the Aircraft to edit : ");
 		
@@ -134,6 +139,7 @@ public class DroneManager implements Serializable {
 		}
 	}
 	
+	//viewAircrafts 항공기 조회 함수
 	public void viewAircrafts() {
 		System.out.println("# of registered drones: " + drones.size());
 		for (int i = 0; i < drones.size(); i++) {
@@ -149,6 +155,7 @@ public class DroneManager implements Serializable {
 		return (Drone) drones.get(index);
 	}
 	
+	//편집 메뉴 옵션 출력문
 	public void showEditMenu() {
 		System.out.println("** Drone Info Edit Menu **");
 		System.out.println(" 1. Edit Serial Number");
